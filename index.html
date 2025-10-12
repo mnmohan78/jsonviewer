@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>JSON Viewer</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h2>🌳 JSON Viewer</h2>
+
+    <div class="tabs">
+      <button class="tab-button active" id="tab-input">JSON Input</button>
+      <button class="tab-button" id="tab-viewer">JSON Viewer</button>
+    </div>
+
+    <!-- Input Section -->
+    <div class="tab-content active" id="input-section">
+      <div class="actions">
+        <input type="file" id="fileInput" accept=".json" />
+        <input type="text" id="json-url" placeholder="Enter JSON URL" />
+        <button id="fetch-json">Fetch</button>
+        <button id="formatBtn">Format</button>
+        <button id="minifyBtn">Remove Whitespace</button>
+        <button id="copyBtn">Copy</button>
+        <button id="pasteBtn">Paste</button>
+        <button id="clearBtn">Clear</button>
+        <button id="viewBtn">View</button>
+        <button id="downloadBtn">Download</button>
+      </div>
+      <textarea id="jsonInput" placeholder="Paste or upload JSON here..."></textarea>
+      <div id="jsonError" class="error-msg"></div>
+    </div>
+
+    <!-- Viewer Section -->
+    <div class="tab-content" id="viewer-section">
+      <div class="viewer-container">
+        <div id="jsonViewer" class="json-tree"></div>
+        <div class="properties-panel">
+          <h3>Properties</h3>
+          <div id="propContent">Select a node to view details</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
